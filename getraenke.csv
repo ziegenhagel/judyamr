@@ -1,7 +1,5 @@
-import * as fs from "fs";
-
-let getranke = `
 Kategorie;Name;Kurze Inhaltsangabe;Zubereitung (ganz knapp)
+Alkoholfrei;Wasser;Stilles Wasser;Wasser servieren
 Alkoholfrei;Apfelschorle;Apfelsaft mit Mineralwasser;1:1 Apfelsaft/Mineralwasser mischen
 Alkoholfrei;Ananassaft;Mit frischer Ananas;Ananas schälen, in Stücke schneiden, pürieren
 Alkoholfrei;Orangensaft;Frischer Orangensaft;Orangen auspressen
@@ -22,47 +20,3 @@ Koffeinhaltig;Kaffee;Filterkaffee;Kaffee zubereiten und servieren
 Koffeinhaltig;Cappuccino;Espresso,Milchschaum;Espresso, Milchschaum hinzu geben
 Koffeinhaltig;Espresso;Starker Kaffee;Espresso zubereiten und servieren
 Koffeinhaltig;Schwarztee;Schwarzteeblätter;Tee aufgießen & ziehen lassen
-`
-
-
-// read from file getraenke.csv
-try {
-    getranke = fs.readFileSync('getraenke.csv', 'utf8')
-} catch (e) {
-    console.log("getraenke.csv not found", e)
-}
-
-export default defineEventHandler(async (event) => {
-
-
-    try {
-        const body = await readBody(event)
-        // if the body csv is set
-        if (body.csvRead)
-            return getranke
-
-        if (body.csvWrite.length > 0)
-            getranke = body.csvWrite
-
-        try {
-            // write to file getraenke.csv
-            fs.writeFileSync('getraenke.csv', getranke, 'utf8')
-        } catch (e) {
-            console.log("getraenke.csv not found", e)
-        }
-
-    } catch (e) {
-        console.log(e)
-    }
-
-    // nimm die csv von oben und mach daraus ein Array von Objekten
-    const getraenkeObjekte = getranke.replaceAll('"', '').split("\n").map((zeile) => {
-        let [kategorie, name, beschreibung, zubereitung] = zeile.split(";")
-        // alles ausser a-z entfernen
-        const id = name?.toLowerCase().replace(/[^a-z]/g, "")
-        return {id, kategorie, name, beschreibung, zubereitung}
-    })
-
-    // entferne alle Objekte, wo die Kategorie leer oder Kateogrie "Kategorie" ist
-    return getraenkeObjekte.filter((getraenk) => getraenk.kategorie && getraenk.kategorie !== "Kategorie")
-})

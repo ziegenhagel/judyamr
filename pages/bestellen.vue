@@ -76,12 +76,12 @@ body {
     margin: auto;
 }
 
-.va-button__content {
+#karte .va-button__content {
     color: #191817;
     background-color: #ffdc83 !important
 }
 
-.va-button {
+#karte .va-button {
     margin-bottom: 20px;
 }
 
