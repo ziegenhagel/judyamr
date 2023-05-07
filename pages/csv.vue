@@ -70,8 +70,8 @@ const add = () => {
     </fieldset>
 
     <va-input @change="changed=true" v-model="data" type="textarea" rows="30" cols="50" style="width: 100%;"></va-input>
-    <va-alert v-if="changed" @click="save" color="warning">Änderungen wurden vorgenommen, bitte speichern!</va-alert>
     <va-button @click="save" color="primary">Speichern</va-button>
+    <va-alert v-if="changed" @click="save" color="warning">Änderungen wurden vorgenommen, bitte speichern!</va-alert>
 </template>
 
 <style >
@@ -91,4 +91,5 @@ fieldset {
 .va-select-dropdown__content {
     z-index: 999999;
 }
+
 </style>
