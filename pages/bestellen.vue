@@ -27,21 +27,54 @@ const bestellen = async (bestellung) => {
 </script>
 
 <template>
+    <div id="karte">
 
-    <va-card v-for="getraenk in getraenke" :key="getraenk.id">
-        <va-card-title>{{ getraenk.name }} ({{ getraenk.kategorie }})</va-card-title>
-        <va-card-content>
-            {{ getraenk.beschreibung }}
-        </va-card-content>
-        <va-card-actions>
+        <img src="/header.png" alt="Header" class="img-fluid" style="width: 100%; margin-bottom: 1rem;">
+
+        <div v-for="getraenk in getraenke" :key="getraenk.id">
+            <h2>{{ getraenk.name }} ({{ getraenk.kategorie }})</h2>
+            <p>
+                {{ getraenk.beschreibung }}
+            </p>
             <va-button @click="bestellen(getraenk)">Bestellen</va-button>
-        </va-card-actions>
-    </va-card>
+            <!--            <img src="/hr.png" alt="Header" class="img-fluid" style="width: 300px;  display:block;margin-bottom: 1rem;">-->
+        </div>
 
+        <img src="/footer.png" alt="Footer" class="img-fluid" style="width: 100%; margin-top: 1rem;">
+    </div>
 </template>
 
-<style scoped>
-.va-card {
-    margin-bottom: 1rem;
+<style>
+body {
+    background-color: #191817;
+    font-family: sans-serif;
+    text-align: center;
+
+}
+
+#karte {
+    max-width: 900px;
+    margin: auto;
+}
+
+.va-button__content {
+    color: #191817;
+    background-color: #ffdc83 !important
+}
+
+.va-button {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #ffdc83;
+    text-transform: uppercase;
+    margin: 5px 0;
+}
+
+p {
+    margin: 5px 0;
+    color: white;
+    font-size: 1.2em;
 }
 </style>
