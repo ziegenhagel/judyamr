@@ -8,7 +8,11 @@ const bestellen = async (bestellung) => {
     const confirm = window.confirm('Möchtest Du ' + bestellung.name + ' bestellen?')
     if (!confirm) return
 
-    window.alert('Bestellung ' + bestellung.name + ' wurde aufgegeben!')
+    // frage nach dem name
+    bestellung.gastname = window.prompt('Wie ist Dein Name?')
+    if (!bestellung.gastname) return
+
+    window.alert('Danke, ' + bestellung.gastname + '! Deine Bestellung ' + bestellung.name + ' wurde aufgegeben.')
 
     bestellung.status = 'bestellt'
     const response = await fetch('/api/bestellen', {

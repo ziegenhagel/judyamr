@@ -33,7 +33,7 @@ const fertig = async (index) => {
 <template>
     <va-data-table
             :items="data"
-            :columns="[ 'name', 'kategorie', 'beschreibung', 'status']"
+            :columns="[ 'name','gastname', 'kategorie', 'beschreibung', 'zubereitung', 'status']"
     >
         <template #cell(status)="{ value, rowIndex}">
             <va-chip :color="value === 'bestellt' ? 'warning' : 'success'">

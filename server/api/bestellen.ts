@@ -32,10 +32,10 @@ export default defineEventHandler(async (event) => {
             return bestellung
         })
 
-        // element mit id soll nach 5 sekunden gelöscht werden
+        // element mit id soll nach 5 minuten gelöscht werden
         setTimeout(() => {
             bestellungen = bestellungen.filter((bestellung) => bestellung.id !== id)
-        }, 60000)
+        }, 5 * 60 * 1000)
 
         return bestellungen
     }
