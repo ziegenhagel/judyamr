@@ -12,8 +12,6 @@ const fertig = async (index) => {
     const confirm = window.confirm('Bestellung ' + bestellung.name + ' als fertig markieren?')
     if (!confirm) return
 
-    window.alert('Bestellung ' + bestellung.name + ' als fertig markiert!')
-
     bestellung.status = 'fertig'
     const response = await fetch('/api/bestellen', {
         method: 'POST',

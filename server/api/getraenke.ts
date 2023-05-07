@@ -1,27 +1,26 @@
 let getranke = `
-Kategorie;Name;Kurze Inhaltsangabe;Zubereitung (ganz knapp)
-Alkoholfrei;Apfelschorle;Apfelsaft mit Mineralwasser;"1:1 Apfelsaft/Mineralwasser mischen"
-Alkoholfrei;Orangensaft;Frischer Orangensaft;"Orangen auspressen, servieren"
-Alkoholfrei;Virgin Mojito;Limette, Minze, Zuckersirup;"Zutaten mixen, Eis hinzufügen"
-Alkoholfrei;Ingwer-Limonade;Ingwer, Zitrone, Zucker;"Ingwer/Zitrone mixen, Eis, Wasser"
-Alkoholfrei;Eistee;Tee, Zitrone, Zucker;"Tee kühlen, Zitrone/Zucker mischen"
-Alkoholfrei;Smoothie;Früchte, Joghurt, Honig;"Früchte/Joghurt/Honig mixen"
-Alkoholfrei;Kokoswasser;Frisches Kokoswasser;"Kokosnuss öffnen, servieren"
-Alkoholfrei;Rhabarberschorle;Rhabarbersaft, Mineralwasser;"1:1 Rhabarbersaft/Mineralwasser mischen"
-Alkoholisch;Gin Tonic;Gin, Tonic, Limette;"Gin/Tonic mischen, Limette"
-Alkoholisch;Caipirinha;Cachaça, Limette, Zucker;"Limette/Zucker stampfen, Cachaça"
-Alkoholisch;Margarita;Tequila, Triple Sec, Limette;"Zutaten mixen, Eis, Salzrand"
-Alkoholisch;Whiskey Sour;Whiskey, Zitronensaft, Zucker;"Zutaten mixen, Eis"
-Alkoholisch;Aperol Spritz;Aperol, Prosecco, Soda;"Aperol/Prosecco/Soda mischen"
-Alkoholisch;Pina Colada;Rum, Ananassaft, Kokoscreme;"Zutaten mixen, Eis"
-Alkoholisch;Moscow Mule;Wodka, Ingwerbier, Limette;"Wodka/Ingwerbier mischen, Limette"
-Alkoholisch;White Russian;Wodka, Kahlúa, Sahne;"Wodka/Kahlúa/Sahne mischen, Eis"
-Koffeinhaltig;Kaffee;Filterkaffee;"Kaffee zubereiten, servieren"
-Koffeinhaltig;Cappuccino;Espresso, Milchschaum;"Espresso, Milchschaum hinzufügen"
-Koffeinhaltig;Espresso;Starker Kaffee;"Espresso zubereiten, servieren"
-Koffeinhaltig;Latte Macchiato;Espresso, Milch, Milchschaum;"Milch/Espresso/Milchschaum schichten"
-Koffeinhaltig;Grüner Tee;Grünteeblätter;"Tee aufgießen, ziehen lassen"
-Koffeinhaltig;Schwarztee;Schwarzteeblätter;"Tee aufgießen, ziehen lassen"
+Kategorie;Name;Kurze Inhaltsangabe;Zubereitung (ganz knapp),,,
+Alkoholfrei;Apfelschorle;Apfelsaft mit Mineralwasser;1:1 Apfelsaft/Mineralwasser mischen
+Alkoholfrei;Ananassaft;Mit frischer Ananas;Ananas schälen, in Stücke schneiden, pürieren
+Alkoholfrei;Orangensaft;Frischer Orangensaft;Orangen auspressen;
+Alkoholfrei;Ananasschorle;Ananassaft mit Mineralwasser;1:1 Ananassaft/Mineralwasser mischen,,,
+Alkoholfrei;Spezi;Cola mit Orangenlimonade;1:1 Cola/Orangenlimonade mischen,,,
+Alkoholfrei;Coca Cola;Cola;,,,
+Alkoholfrei;Eistee;Tee, Zitrone, Zucker;Tee aufgießen, Zitrone und Zucker hinzufügen
+Alkoholisch;Bier;Verschiedene Sorten;,,,
+Alkoholisch;Wein;Rotwein, Weißwein;,,,
+Alkoholisch;Cuba Libre; Rum und Coke;Rum und Coke mischen,,,
+Alkoholisch;Gin Tonic;Gin, Tonic, Limette;Gin, Tonic, Limette mischen,,,
+Alkoholisch;Whiskey Sour;Whiskey, Zitronensaft,Zucker; Whiskey, Zitronensaft, Zucker mischen,,,
+Alkoholisch;Aperol Spritz;Aperol, Prosecco, Soda;Aperol, Prosecco, Soda mischen,  Eis
+Alkoholisch;Sekt;Verschiedene Sorten;,,,
+Alkoholisch;Pina Colada;Rum, Ananassaft,Kokoscreme;Zutaten mixen, Eis
+Alkoholisch;Lord Voldemort;Vodka, blue curaÁao, Lemon squash und Sprite",,,
+Koffeinhaltig;Kaffee;Filterkaffee;""Kaffee zubereiten"," servieren""",,
+Koffeinhaltig;Cappuccino;Espresso," Milchschaum;Espresso, Milchschaum hinzu geben",,
+Koffeinhaltig;Espresso;Starker Kaffee;""Espresso zubereiten"," servieren""",,
+Koffeinhaltig;Schwarztee;Schwarzteeblätter;Tee aufgießen & ziehen lassen,,
+
 `
 export default defineEventHandler((event) => {
     // nimm die csv von oben und mach daraus ein Array von Objekten
