@@ -31,49 +31,55 @@ const bestellen = async (bestellung) => {
 </script>
 
 <template>
-    <div id="karte">
+    <div id="kartenwrapper">
+        <div id="karte">
 
-        <img src="/header.png" alt="Header" class="img-fluid" style="width: 100%;">
+            <img src="/header.png" alt="Header" class="img-fluid" style="width: 100%;">
 
-        <img src="/font.png" alt="Logo" class="img-fluid" width="300" style="margin-bottom: 1em;">
+            <img src="/font.png" alt="Logo" class="img-fluid" width="300" style="margin-bottom: 1em;">
 
-        <div v-for="getraenk in getraenke" :key="getraenk.id">
-            <h2>{{ getraenk.name }}
-                <svg v-if="getraenk.kategorie == 'Alkoholisch'" xmlns="http://www.w3.org/2000/svg" width="32"
-                     height="32" viewBox="0 0 512 512">
-                    <path fill="currentColor"
-                          d="M248 440h-72v32h176v-32h-72V318.968l176-192.762V80H72v46.206l176 192.762ZM104 113.794V112h320v1.794L374.508 168H153.492ZM182.709 200h162.582l-80.349 88h-1.884Z"/>
-                </svg>
-                <svg v-else-if="getraenk.kategorie == 'Koffeinhaltig'" xmlns="http://www.w3.org/2000/svg" width="32"
-                     height="32" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                          d="M6 18a6.06 6.06 0 0 0 5.17-6a7.62 7.62 0 0 1 6.52-7.51l2.59-.37c-.07-.08-.13-.16-.21-.24c-3.26-3.26-9.52-2.28-14 2.18C2.28 9.9 1 15 2.76 18.46z"/>
-                    <path fill="currentColor"
-                          d="M12.73 12a7.63 7.63 0 0 1-6.51 7.52l-2.46.35l.15.17c3.26 3.26 9.52 2.29 14-2.17C21.68 14.11 23 9 21.25 5.59l-3.34.48A6.05 6.05 0 0 0 12.73 12z"/>
-                </svg>
-            </h2>
-            <p>
-                {{ getraenk.beschreibung }}
-            </p>
-            <va-button @click="bestellen(getraenk)">Bestellen</va-button>
-            <!--            <img src="/hr.png" alt="Header" class="img-fluid" style="width: 300px;  display:block;margin-bottom: 1rem;">-->
+            <div v-for="getraenk in getraenke" :key="getraenk.id">
+                <h2>{{ getraenk.name }}
+                    <svg v-if="getraenk.kategorie == 'Alkoholisch'" xmlns="http://www.w3.org/2000/svg" width="32"
+                         height="32" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                              d="M248 440h-72v32h176v-32h-72V318.968l176-192.762V80H72v46.206l176 192.762ZM104 113.794V112h320v1.794L374.508 168H153.492ZM182.709 200h162.582l-80.349 88h-1.884Z"/>
+                    </svg>
+                    <svg v-else-if="getraenk.kategorie == 'Koffeinhaltig'" xmlns="http://www.w3.org/2000/svg" width="32"
+                         height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                              d="M6 18a6.06 6.06 0 0 0 5.17-6a7.62 7.62 0 0 1 6.52-7.51l2.59-.37c-.07-.08-.13-.16-.21-.24c-3.26-3.26-9.52-2.28-14 2.18C2.28 9.9 1 15 2.76 18.46z"/>
+                        <path fill="currentColor"
+                              d="M12.73 12a7.63 7.63 0 0 1-6.51 7.52l-2.46.35l.15.17c3.26 3.26 9.52 2.29 14-2.17C21.68 14.11 23 9 21.25 5.59l-3.34.48A6.05 6.05 0 0 0 12.73 12z"/>
+                    </svg>
+                </h2>
+                <p>
+                    {{ getraenk.beschreibung }}
+                </p>
+                <va-button @click="bestellen(getraenk)">Bestellen</va-button>
+                <!--            <img src="/hr.png" alt="Header" class="img-fluid" style="width: 300px;  display:block;margin-bottom: 1rem;">-->
+            </div>
+
+            <img src="/footer.png" alt="Footer" class="img-fluid" style="width: 100%; margin-top: 1rem;">
         </div>
-
-        <img src="/footer.png" alt="Footer" class="img-fluid" style="width: 100%; margin-top: 1rem;">
     </div>
 </template>
 
 <style>
-body {
+#kartenwrapper {
     background-color: #191817;
-    font-family: sans-serif;
-    text-align: center;
+}
 
+body {
+    margin: 0;
+    padding: 0;
 }
 
 #karte {
     max-width: 900px;
     margin: auto;
+    font-family: sans-serif;
+    text-align: center;
 }
 
 #karte .va-button__content {
