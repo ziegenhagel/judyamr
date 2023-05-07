@@ -91,19 +91,19 @@ body {
     margin-bottom: 20px;
 }
 
-h2 {
+#karte h2 {
     color: #ffdc83;
     text-transform: uppercase;
     margin: 5px 0;
 }
 
-p {
+#karte p {
     margin: 5px 0;
     color: white;
     font-size: 1.2em;
 }
 
-h2 {
+#karte h2 {
     display: flex;
     align-items: center;
     justify-content: center;
