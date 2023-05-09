@@ -16,6 +16,7 @@
     "nuxt": "^3.4.3"
   },
   "dependencies": {
-    "@vuestic/nuxt": "^1.0.13"
+    "@vuestic/nuxt": "^1.0.13",
+    "mongodb": "^5.4.0"
   }
 }
